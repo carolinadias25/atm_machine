@@ -1,10 +1,25 @@
 class Atm {
-  constructor() {
-    this.funds = 8000;
+  constructor(amount) {
+    this.balance = amount;
+    this.value = "200";
   }
 
-  withdraw(amount) {
-    this.funds -= amount;
+  withdraw(amount, account, pin) {
+    if (this.wrongPinIsProvided(account, pin)) {
+      return { status: "error", message: "Incorrect pin" };
+    } else if (this.balance <= amount) {
+      return { status: "error", message: "FUNDS_ERR" };
+    } else {
+      this.balance -= amount;
+    }
+  }
+
+  wrongPinIsProvided(account, pin) {
+    return account.pin !== pin;
+  }
+
+  getBalance() {
+    return this.balance;
   }
 }
 
