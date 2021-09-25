@@ -41,7 +41,7 @@ describe("Atm class", () => {
       it("is expected to return error status and message", () => {
         expect(subject.withdraw(9000, account, correctPinCode)).to.eql({
           status: "error",
-          message: "FUNDS_ERR",
+          message: "ATM_ERR",
         });
       });
     });
