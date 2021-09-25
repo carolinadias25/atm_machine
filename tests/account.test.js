@@ -3,10 +3,12 @@ const { expect } = require("chai");
 const Account = require("../src/account");
 describe("Account class", () => {
   beforeEach(() => {
+    accNumber = "12345678";
     correctPinCode = "1234";
     wrongPinCode = "0000";
-    accNumber = "12345678";
-    account = new Account(accNumber, correctPinCode, 200);
+    overdraft = 100;
+    amount = 200;
+    account = new Account(accNumber, correctPinCode, amount, overdraft);
   });
 
   it("is expected to be initiased", () => {
@@ -34,11 +36,22 @@ describe("Account class", () => {
       });
     });
   });
-  describe("Cannot dispense more money than it holds on the account", () => {
+  describe("Cannot dispense more money than it holds on the account, including the overdraft", () => {
     it("is expected to return error status and message", () => {
-      expect(account.withdraw(correctPinCode, 500)).to.eql({
+      expect(account.withdraw(correctPinCode, 800)).to.eql({
         status: "error",
         message: "FOUNDS_ERR",
+      });
+    });
+    describe("Cannot get balance if pin is incorrect", () => {
+      it("is expected to return error status and message", () => {
+        expect(account.getBalance(wrongPinCode)).to.eql({
+          status: "error",
+          message: "ACCOUNT_ERR",
+        });
+      });
+      it("is expected to return the balance if the pin is correct", () => {
+        expect(account.getBalance(correctPinCode)).to.equal(200);
       });
     });
   });
