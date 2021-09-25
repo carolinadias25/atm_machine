@@ -5,7 +5,7 @@ class Atm {
 
   withdraw(funds, account, pin) {
     if (this.wrongPinIsProvided(account, pin)) {
-      return { status: "error", message: "Incorrect pin" };
+      return { status: "error", message: "ACCOUNT_ERR" };
     } else if (this.balance < funds) {
       return { status: "error", message: "ATM_ERR" };
     } else {

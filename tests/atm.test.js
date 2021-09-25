@@ -34,7 +34,7 @@ describe("Atm class", () => {
     it("is expected to return error status and message", () => {
       expect(subject.withdraw(500, account, wrongPinCode)).to.eql({
         status: "error",
-        message: "Incorrect pin",
+        message: "ACCOUNT_ERR",
       });
     });
     describe("The ATM cannot dispense more money than it holds", () => {
