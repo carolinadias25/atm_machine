@@ -1,6 +1,6 @@
 # ATM_machine
 
-It's a software for an ATM machine
+It's a software for an ATM machine. This program is a command line tool.
 
 ## Getting Started
 
@@ -43,37 +43,37 @@ npm test
 - JavaScript - The language used;
 
 ## User Stories
+```
+- 1
 
-- [x] 1
-
-> As a client,
+> As a Costumer,
 > I need to have a bank account
 > So I can save and spend money
 
-- [x] 2
+- 2
 
 > As a Costumer,
 > I want to have a bank balance
 > So I can check how much money I have to spend
 
-- [x] 3
+- 3
 
 > As a Customer,  
 > I want to be able to withdraw from my account
 > So I can spend my money
 
-- [x] 3.1
+- 3.1
 
 > As a Bank,  
 > I want withdrawals to only be allowed to occur if the customer's pin provided is correct
 > So that we only dispose of money to the correct customer
 
-- [x] 3.2
+- 3.2
 
 > As a Bank,  
 > I want withdrawals to only be allowed to occur if the customer has sufficient funds & atm machine has sufficient funds available
 > So I don't go out of pocket
-
+```
 ## Authors
 
 - **Carolina Dias**
