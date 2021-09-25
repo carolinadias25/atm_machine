@@ -69,9 +69,10 @@ npm test
 > I want withdrawals to only be allowed to occur if the customer has sufficient funds
 
 - [x] 3
-  > As a Bank,  
-  > So we don't go out of pocket,  
-  > I want withdrawals to only be allowed to occur if the atm machine has sufficient funds available
+
+> As a Bank,  
+> So we don't go out of pocket,  
+> I want withdrawals to only be allowed to occur if the atm machine has sufficient funds available
 
 ## Authors
 
