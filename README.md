@@ -42,7 +42,7 @@ npm test
 
 - JavaScript - The language used;
 
-### User Stories
+## User Stories
 
 - [x] 1
 
