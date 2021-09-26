@@ -58,9 +58,9 @@ npm test
 
 - [x] 3
 
-> As a Customer,  
-> I want to be able to withdraw from my account
-> So I can spend my money
+As a Customer,  
+I want to be able to withdraw from my account
+So I can spend my money
 
 - [x] 3.1
 

@@ -8,26 +8,39 @@ describe("Account class", () => {
     wrongPinCode = "0000";
     overdraft = 100;
     amount = 200;
+    withdrawAmount = 50;
     account = new Account(accNumber, correctPinCode, amount, overdraft);
   });
 
   it("is expected to be initiased", () => {
     expect(account).to.be.an("object");
   });
-  it("is exepected ti be an instance of Account", () => {
+  it("is exepected to be an instance of Account", () => {
     expect(account).to.be.instanceOf(Account);
   });
   it("is expected to hold an amount when initialized", () => {
-    expect(account.balance).to.equal(200);
+    expect(account.getBalance(correctPinCode)).to.equal(
+      console.log(`B ${amount}\n----`)
+    );
   });
   it("is expected to reduce balance on sucessful withdraw", () => {
-    account.withdraw(correctPinCode, 50);
-    expect(account.balance).to.equal(150);
+    account.withdraw(correctPinCode, withdrawAmount);
+    expect(account.getBalance(correctPinCode)).to.equal(
+      console.log(`B ${amount}\n----`)
+    );
+  });
+  it("is expected return an input printed", () => {
+    account.withdraw(wrongPinCode, withdrawAmount);
+    expect(account.withdraw(correctPinCode, withdrawAmount)).to.equal(
+      console.log(`W ${withdrawAmount}\n----`)
+    );
   });
   describe("The Account should not dispense funds if the pin is incorrect", () => {
     it("is expected NOT to reduce account amount", () => {
       account.withdraw(wrongPinCode, 50);
-      expect(account.balance).to.equal(200);
+      expect(account.getBalance(correctPinCode)).to.equal(
+        console.log(`B ${amount}\n----`)
+      );
     });
     it("is expected to return error status and message", () => {
       expect(account.withdraw(wrongPinCode, 50)).to.eql({
@@ -51,7 +64,9 @@ describe("Account class", () => {
         });
       });
       it("is expected to return the balance if the pin is correct", () => {
-        expect(account.getBalance(correctPinCode)).to.equal(200);
+        expect(account.getBalance(correctPinCode)).to.equal(
+          console.log(`B ${amount}\n----`)
+        );
       });
     });
   });
