@@ -80,11 +80,10 @@ So I can spend my money
 
 **Given** a costumer that has an account number 12345678 and a pin number 1234  
 **And** the customer has a balance of £500, and overdraft facility of £100  
-**And** the costumer made a cash withdrawal of £100
-**And** a balance inquiry after that transaction
+**And** the costumer made a cash withdrawal of £100 and balance inquiry after that transaction                                                        
 **Then** the costumer would see:
 
-```irb
+```
 
 12345678 1234
 ---------------
